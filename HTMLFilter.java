@@ -67,72 +67,72 @@ final public class HTMLFilter {
     /**
      * configuration for allowed html elements and attributes
      */
-    private HashMap<String, HashMap<String, Boolean>> html_config;
+    private Map<String, Set<String>> html_config;
     /**
      * configuration for attributes where protocols appear
      */
-    private HashMap<String, Boolean> protocol_att;
+    private Set<String> protocol_att;
     /**
      * configuration for allowed protocols
      */
-    private HashMap<String, Boolean> protocol_list;
+    private Set<String> protocol_list;
 
     /**
      * the constructor
      */
     public HTMLFilter() {
-        html_config = new HashMap<String, HashMap<String, Boolean>>();
-        protocol_att = new HashMap<String, Boolean>();
-        protocol_list = new HashMap<String, Boolean>();
+        html_config = new HashMap<String, HashSet<String>>();
+        protocol_att = new HashSet<String>();
+        protocol_list = new HashSet<String>();
 
         // default config
-        HashMap<String, Boolean> attlist;
-        attlist = new HashMap<String, Boolean>();
-        attlist.put("href", true);
-        attlist.put("target", true);
-        attlist.put("title", true);
+        Set<String> attlist;
+        attlist = new HashSet<String>();
+        attlist.put("href");
+        attlist.put("target");
+        attlist.put("title");
         html_config.put("a", attlist);
-        attlist = new HashMap<String, Boolean>();
-        attlist.put("src", true);
-        attlist.put("width", true);
-        attlist.put("height", true);
-        attlist.put("border", true);
-        attlist.put("alt", true);
-        attlist.put("title", true);
+        attlist = new HashSet<String>();
+        attlist.put("src");
+        attlist.put("width");
+        attlist.put("height");
+        attlist.put("border");
+        attlist.put("alt");
+        attlist.put("title");
         html_config.put("img", attlist);
-        attlist = new HashMap<String, Boolean>();
-        attlist.put("border", true);
-        attlist.put("width", true);
-        attlist.put("height", true);
+        attlist = new HashSet<String>();
+        attlist.put("border");
+        attlist.put("width");
+        attlist.put("height");
         html_config.put("table", attlist);
-        html_config.put("th", new HashMap<String, Boolean>());
-        html_config.put("tr", new HashMap<String, Boolean>());
-        html_config.put("td", new HashMap<String, Boolean>());
-        html_config.put("br", new HashMap<String, Boolean>());
-        html_config.put("p", new HashMap<String, Boolean>());
-        html_config.put("b", new HashMap<String, Boolean>());
-        html_config.put("i", new HashMap<String, Boolean>());
-        html_config.put("strong", new HashMap<String, Boolean>());
-        html_config.put("em", new HashMap<String, Boolean>());
-        html_config.put("h1", new HashMap<String, Boolean>());
-        html_config.put("h2", new HashMap<String, Boolean>());
-        html_config.put("h3", new HashMap<String, Boolean>());
-        html_config.put("h4", new HashMap<String, Boolean>());
-        html_config.put("h5", new HashMap<String, Boolean>());
-        html_config.put("h6", new HashMap<String, Boolean>());
-        attlist = new HashMap<String, Boolean>();
-        attlist.put("face", true);
-        attlist.put("size", true);
-        attlist.put("color", true);
+        html_config.put("th", new HashSet<String>());
+        html_config.put("tr", new HashSet<String>());
+        html_config.put("td", new HashSet<String>());
+        html_config.put("br", new HashSet<String>());
+        html_config.put("p", new HashSet<String>());
+        html_config.put("b", new HashSet<String>());
+        html_config.put("i", new HashSet<String>());
+        html_config.put("strong", new HashSet<String>());
+        html_config.put("em", new HashSet<String>());
+        html_config.put("h1", new HashSet<String>());
+        html_config.put("h2", new HashSet<String>());
+        html_config.put("h3", new HashSet<String>());
+        html_config.put("h4", new HashSet<String>());
+        html_config.put("h5", new HashSet<String>());
+        html_config.put("h6", new HashSet<String>());
+        attlist = new HashSet<String>();
+        attlist.put("face");
+        attlist.put("size");
+        attlist.put("color");
         html_config.put("font", attlist);
 
-        protocol_att.put("href", true);
-        protocol_att.put("src", true);
+        protocol_att.put("href");
+        protocol_att.put("src");
 
-        protocol_list.put("http", true);
-        protocol_list.put("https", true);
-        protocol_list.put("ftp", true);
-        protocol_list.put("mailto", true);
+        protocol_list.put("http");
+        protocol_list.put("https");
+        protocol_list.put("ftp");
+        protocol_list.put("mailto");
 
     }
 

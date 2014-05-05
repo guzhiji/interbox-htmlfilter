@@ -314,7 +314,9 @@ class HTMLFilter {
         //SOLUTION 3
         $l = strlen($html);
         for ($i = 0; $i < $l; ++$i) {
-            $char = substr($html, $i, 1);
+            //$char = substr($html, $i, 1);
+            //SOLUTION 4
+            $char = $html[$i];
 
             if ($onclosetag) {
                 if ($char == ">") {
